@@ -1,0 +1,10 @@
+tmux new-session -s sc -n editor -d
+tmux send-keys -t sc 'cd ~/surecritic' C-m
+tmux send-keys -t sc 'vim' C-m
+tmux split-window -v -t sc
+tmux select-layout -t sc main-horizontal
+tmux send-keys -t sc:1.2 'cd ~/Sites/surecritic' C-m
+tmux new-window -n console -t sc
+tmux send-keys -t sc:2 'cd ~/surecritic' C-m
+tmux select-window -t sc:1
+tmux attach -t sc

@@ -1,21 +1,24 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-
-# Allow the use of globs that are possibly empty
-setopt nullglob
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="fino-time"
+ZSH_THEME="xiong-chiamiov"
+
+# RVM Requires
+setopt nullglob
+
+# Access to the online help
+ unalias run-help
+ autoload run-help
+  HELPDIR=/usr/local/share/zsh/helpfiles
 
 # Aliases
 alias gitc='git log --author="Josh" --format="%n%Creset%ad, %an:%n%Cgreen%s;"'
 alias nbe='noglob bundle exec'
 alias be='bundle exec'
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -49,7 +52,7 @@ alias be='bundle exec'
 
 
 # Set xcode, homebrew & mysql paths
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Postgres.app:/Contents/MacOS/bin:/Developer/usr/bin:$HOME/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Postgres.app:$HOME/bin:$PATH
 # Export CC=/usr/bin/gcc-4.2
 # I'm commenting out this compiler trying to clean up my zshrc. if shit goes wrong, uncomment this.
 #export CC=/usr/llvm-gcc-4.2/bin/llvm-gcc-4.2
@@ -59,9 +62,12 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Po
 
 #Okay, this is fucking weird. I have to uncomment this line for MyDBT, but comment it for SureCritic.
 # To get psql to work
-export DYLD_FALLBACK_LIBRARY_PATH=/Applications/Postgres.app/Contents/MacOS/lib:$DYLD_LIBRARY_PATH
+#export DYLD_FALLBACK_LIBRARY_PATH=/Applications/Postgres.app/Contents/MacOS/lib:$DYLD_LIBRARY_PATH
 
 source $ZSH/oh-my-zsh.sh
 
-#Set up RVM
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# rbenv
+# use Homebrew's directories instead of ~/.rbenv
+export RBENV_ROOT=/usr/local/var/rbenv
+# enable shims and autocompletion for .rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
