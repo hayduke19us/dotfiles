@@ -1,0 +1,24 @@
+[user]
+  name = Josh Sullivan
+  email = josh@dipperstove.com
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  co = checkout
+  me = log  --author='Josh' --format='%n%Creset%ad, %an:%n%Cgreen%s'
+[core]
+  editor = vim
+  excludesfiles = ~/.gitignore
+  pager = less -FRSX
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+
+[branch]
+  autosetupmerge = true
+
+[push]
+  default = current
+[gitreview]
+  username = jsullivandigs

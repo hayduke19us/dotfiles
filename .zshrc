@@ -16,9 +16,12 @@ setopt nullglob
   HELPDIR=/usr/local/share/zsh/helpfiles
 
 # Aliases
-alias gitc='git log --author="Josh" --format="%n%Creset%ad, %an:%n%Cgreen%s;"'
 alias nbe='noglob bundle exec'
 alias be='bundle exec'
+
+# Set tmux in 256 color mode (make vim look better)
+alias tmux='TERM=xterm-256color tmux'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
