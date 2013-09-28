@@ -1,0 +1,13 @@
+tmux new-session -s horizon -n editor -d
+tmux send-keys -t horizon 'cd ~/code/horizon' C-m
+tmux send-keys -t horizon 'vim' C-m
+tmux split-window -v -t horizon
+tmux split-window -v -t horizon
+tmux select-layout -t horizon main-vertical
+tmux send-keys -t horizon:1.2 'cd ~/code/horizon' C-m
+tmux send-keys -t horizon:1.2 './run_tests.sh --runserver' C-m
+tmux new-window -n forward -t horizon
+tmux send-keys -t horizon:2 'cd ~' C-m
+tmux send-keys -t horizon:2 'forward 8000' C-m
+tmux select-window -t horizon:1
+tmux attach -t horizon
