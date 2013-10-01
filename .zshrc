@@ -10,14 +10,11 @@ ZSH_THEME="xiong-chiamiov"
 # RVM Requires
 setopt nullglob
 
-# Access to the online help
- unalias run-help
- autoload run-help
-  HELPDIR=/usr/local/share/zsh/helpfiles
-
 # Aliases
 alias nbe='noglob bundle exec'
 alias be='bundle exec'
+alias sc_beta='ssh appuser@beta.surecritic.com'
+alias sc_sandbox='ssh deploy@sandbox.surecritic.com'
 
 # Set tmux in 256 color mode (make vim look better)
 alias tmux='TERM=xterm-256color tmux'
