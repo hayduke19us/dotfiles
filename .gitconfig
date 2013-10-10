@@ -5,9 +5,10 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   co = checkout
   me = log  --author='Josh' --format='%n%Creset%ad, %an:%n%Cgreen%s'
+  s = status
 [core]
   editor = vim
-  excludesfiles = ~/.gitignore
+  excludesfile = ~/.gitignore
   pager = less -FRSX
 [color]
   diff = auto

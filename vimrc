@@ -7,9 +7,12 @@ set cpoptions=aABceFsWZ   " Set various compatible options
 set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_Store,log/**,tmp/**,coverage/**,rdoc/**
 set list                  " Show whitespace
 set noswapfile            " Swap files annoy me.
-set colorcolumn=81        " Stick with short lines.
+set textwidth=80
+set colorcolumn=+1        " Stick with short lines.
 set encoding=utf-8
-set t_Co=256 " Use 256 colors
+set t_Co=256              " Use 256 colors
+set splitright            " Make new vsplits open to the right of current buffer
+set splitbelow            " Make new horiz splits open below current buffer
 
 call pathogen#runtime_append_all_bundles() " Load plugins via pathogen
 syntax enable " Turn on syntax highlighting
@@ -42,6 +45,14 @@ map <leader>s :s/\s\+$//g<CR>
 
 " retab the document (tabs to spaces)
 nmap <silent> <leader><S-t> :retab!<CR>
+
+" <leader>e to edit files
+nmap <leader>e :e **/
+cmap <leader>e **/
+
+" keep selections when indenting in visual mode
+xnoremap > >gv
+xnoremap < <gv
 
 " Remap the 'kj' keyboard input whilst in Insert mode to switch to Normal mode
 " This is a handy way to go back to Normal mode without reaching for the <Esc>

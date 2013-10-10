@@ -16,6 +16,8 @@ alias be='bundle exec'
 alias sc_beta='ssh appuser@beta.surecritic.com'
 alias sc_sandbox='ssh deploy@sandbox.surecritic.com'
 alias lha='ls -lha'
+alias t='todo.rb'
+alias sc='./~/dotfiles/tmux_scripts/sc'
 
 # Set tmux in 256 color mode (make vim look better)
 alias tmux='TERM=xterm-256color tmux'
