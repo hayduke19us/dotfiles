@@ -54,17 +54,14 @@ cmap <leader>e **/
 xnoremap > >gv
 xnoremap < <gv
 
+" Split a line with CTRL-J
+nnoremap <NL> i<CR><ESC>
+
 " Remap the 'kj' keyboard input whilst in Insert mode to switch to Normal mode
 " This is a handy way to go back to Normal mode without reaching for the <Esc>
 " key and there aren't many english words that have 'k' and 'j' used next to
 " each other.
 inoremap kj <Esc>
-
-" Don't allow arrows for navigation. Gotta train myself.
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 
 source $HOME/.vim/plugins
 source $HOME/.vim/window
