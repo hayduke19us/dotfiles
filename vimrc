@@ -152,3 +152,21 @@ set statusline+=]                         " close bracket
 set statusline+=%=                        " right-align remainder
 set statusline+=@\ L%l\ C%c\ (%P)(%L)\    " position in file and number of lines
 
+"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+"Extras, for testing out possible canidates
+"=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
+
+"Strip trailing whitespace
+"function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+"  let _s=@/
+"  let l = line(".")
+"  let c = col(".")
+  " Do the business:
+"  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+"  let @/=_s
+"  call cursor(l, c)
+"endfunction
+"autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
