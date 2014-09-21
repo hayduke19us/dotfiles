@@ -14,7 +14,7 @@ set t_Co=256              " Use 256 colors
 set splitright            " Make new vsplits open to the right of current buffer
 set splitbelow            " Make new horiz splits open below current buffer
 
-call pathogen#incubate() " Load plugins via pathogen
+call pathogen#infect() " Load plugins via pathogen
 syntax enable " Turn on syntax highlighting
 
 " Set the color scheme
