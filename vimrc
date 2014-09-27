@@ -1,3 +1,9 @@
+" Set the color scheme
+call pathogen#incubate()
+colorscheme solarized
+set background=light
+call togglebg#map("bg")
+
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " BASIC OPTIONS
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -10,17 +16,10 @@ set noswapfile            " Swap files annoy me.
 set textwidth=80
 set colorcolumn=+1        " Stick with short lines.
 set encoding=utf-8
-set t_Co=256              " Use 256 colors
 set splitright            " Make new vsplits open to the right of current buffer
 set splitbelow            " Make new horiz splits open below current buffer
 
-call pathogen#infect() " Load plugins via pathogen
 syntax enable " Turn on syntax highlighting
-
-" Set the color scheme
-let g:solarized_termcolors=256
-colorscheme solarized
-set background=dark
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "KEY BINDINGS
@@ -28,27 +27,27 @@ set background=dark
 let mapleader=',' " set leader to ,
 
 " format paragraphs (72 columns)
-map ^^ {!}par w72qrg<CR>
+nnoremap ^^ {!}par w72qrg<CR>
 
 " one-stroke window maximizing
-map <C-H> <C-W>h<C-W><BAR>
-map <C-L> <C-W>l<C-W><BAR>
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
+nnoremap <C-H> <C-W>h<C-W><BAR>
+nnoremap <C-L> <C-W>l<C-W><BAR>
+nnoremap <C-J> <C-W>j<C-W>_
+nnoremap <C-K> <C-W>k<C-W>_
 
 " quick buffer switching
-map <leader>[ :bprevious<CR>
-map <leader>] :bnext<CR>
+nnoremap <leader>[ :bprevious<CR>
+nnoremap <leader>] :bnext<CR>
 
 " shortcut to strip trailing whitespace
-map <leader>s :s/\s\+$//g<CR>
+vnoremap <leader>s :s/\s\+$//g<CR>
 
 " retab the document (tabs to spaces)
-nmap <silent> <leader><S-t> :retab!<CR>
+nnoremap <silent> <leader><S-t> :retab!<CR>
 
 " <leader>e to edit files
-nmap <leader>e :e **/
-cmap <leader>e **/
+nnoremap <leader>e :e **/
+cnoremap <leader>e **/
 
 " keep selections when indenting in visual mode
 xnoremap > >gv
@@ -62,10 +61,6 @@ nnoremap <NL> i<CR><ESC>
 " key and there aren't many english words that have 'k' and 'j' used next to
 " each other.
 inoremap kj <Esc>
-
-if has("gui_running")
-  source $HOME/.vim/gui
-endif
 
 " Use ag instead of ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -164,5 +159,4 @@ nnoremap <leader>t :TagbarToggle<CR>
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "Extras, for testing out possible canidates
 "=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
-
 
