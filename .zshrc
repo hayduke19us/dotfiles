@@ -9,16 +9,6 @@ ZSH_THEME="xiong-chiamiov"
 
 # RVM Requires
 setopt nullglob
-
-# Aliases
-alias nbe='noglob bundle exec'
-alias be='bundle exec'
-alias sc_beta='ssh appuser@beta.surecritic.com'
-alias sc_sandbox='ssh deploy@sandbox.surecritic.com'
-alias lha='ls -lha'
-alias t='todo.rb'
-alias sc='./~/dotfiles/tmux_scripts/sc'
-
 # Set tmux in 256 color mode (make vim look better)
 alias tmux='TERM=xterm-256color tmux'
 
@@ -51,7 +41,7 @@ alias tmux='TERM=xterm-256color tmux'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git git-extras ruby web-search)
+plugins=(rails git git-extras ruby web-search)
 
 
 # Set xcode, homebrew & mysql paths
@@ -68,6 +58,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Po
 #export DYLD_FALLBACK_LIBRARY_PATH=/Applications/Postgres.app/Contents/MacOS/lib:$DYLD_LIBRARY_PATH
 
 source $ZSH/oh-my-zsh.sh
+source ~/.bashrc
 
 # rbenv
 # use Homebrew's directories instead of ~/.rbenv
