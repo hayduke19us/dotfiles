@@ -1,7 +1,7 @@
 " Set the color scheme
 call pathogen#incubate()
 colorscheme solarized
-set background=light
+set background=dark
 call togglebg#map("bg")
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -66,8 +66,8 @@ inoremap kj <Esc>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " PLUGIN OPTIONS
-"NetRW
-let g:netrw_liststyle=3
+"NetRW *After Delete I have no longer had problems with stagnant buffers *
+" let g:netrw_liststyle=3
 
 "EDITING OPTIONS
 set number      " line numbers
@@ -158,5 +158,5 @@ nnoremap <leader>t :TagbarToggle<CR>
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "Extras, for testing out possible canidates
-"=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
 
+"=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
