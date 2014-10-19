@@ -1,6 +1,6 @@
 [user]
-  name = Josh Sullivan
-  email = josh@dipperstove.com
+  name = Matthew Sullivan 
+  email = hayduke19us@gmail.com 
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   co = checkout
@@ -22,4 +22,4 @@
 [push]
   default = current
 [gitreview]
-  username = jsullivandigs
+  username = hayduke19us
