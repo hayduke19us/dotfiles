@@ -45,7 +45,7 @@ plugins=(rails git git-extras ruby web-search)
 
 
 # Set xcode, homebrew & mysql paths
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Postgres.app:$HOME/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Postgres.app:$HOME/bin:$HOME/code/bork/bin:$PATH
 # Export CC=/usr/bin/gcc-4.2
 # I'm commenting out this compiler trying to clean up my zshrc. if shit goes wrong, uncomment this.
 #export CC=/usr/llvm-gcc-4.2/bin/llvm-gcc-4.2
