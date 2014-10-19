@@ -58,7 +58,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Po
 #export DYLD_FALLBACK_LIBRARY_PATH=/Applications/Postgres.app/Contents/MacOS/lib:$DYLD_LIBRARY_PATH
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bashrc
 
 # rbenv
 # use Homebrew's directories instead of ~/.rbenv
