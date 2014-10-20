@@ -114,6 +114,12 @@ endif
 "FILETYPE OPTIONS
 " use filetype plugins to determine indent settings
 filetype plugin indent on
+filetype plugin on
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
  
 " ruby and yaml indentation
 autocmd FileType ruby,rdoc,cucumber,yaml,html,eruby set softtabstop=2 shiftwidth=2 tabstop=2

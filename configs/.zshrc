@@ -44,6 +44,7 @@ plugins=(rails git git-extras ruby web-search)
 
 # Set xcode, homebrew & mysql paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Postgres.app:$HOME/bin:$HOME/code/bork/bin:$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,3 +54,6 @@ export RBENV_ROOT=/usr/local/var/rbenv
 
 # enable shims and autocompletion for .rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

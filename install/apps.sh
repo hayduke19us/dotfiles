@@ -22,3 +22,6 @@ ok brew rbenv
 # email and communication
 ok cask mailbox
 ok cask slack
+
+# browers
+ok cask google-chrome

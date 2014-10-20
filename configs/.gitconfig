@@ -1,6 +1,8 @@
 [user]
-  name = Matthew Sullivan 
-  email = hayduke19us@gmail.com 
+	name = Matthew Sullivan
+	email = hayduke19us@gmail.com
+	username = hayduke19us
+	password = 1rainflood
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   co = checkout
