@@ -7,8 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="xiong-chiamiov"
 
-# RVM Requires
-setopt nullglob
 # Set tmux in 256 color mode (make vim look better)
 alias tmux='TERM=xterm-256color tmux'
 
@@ -46,21 +44,12 @@ plugins=(rails git git-extras ruby web-search)
 
 # Set xcode, homebrew & mysql paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Postgres.app:$HOME/bin:$HOME/code/bork/bin:$PATH
-# Export CC=/usr/bin/gcc-4.2
-# I'm commenting out this compiler trying to clean up my zshrc. if shit goes wrong, uncomment this.
-#export CC=/usr/llvm-gcc-4.2/bin/llvm-gcc-4.2
-
-#cleaning up my path by taking some things out and putting them here. if stuff breaks. check here first.
-#/Contents/MacOS/bin:/Developer/usr/bin:
-
-#Okay, this is fucking weird. I have to uncomment this line for MyDBT, but comment it for SureCritic.
-# To get psql to work
-#export DYLD_FALLBACK_LIBRARY_PATH=/Applications/Postgres.app/Contents/MacOS/lib:$DYLD_LIBRARY_PATH
 
 source $ZSH/oh-my-zsh.sh
 
 # rbenv
 # use Homebrew's directories instead of ~/.rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
+
 # enable shims and autocompletion for .rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

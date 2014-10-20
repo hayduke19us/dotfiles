@@ -1,10 +1,11 @@
 " Set the color scheme
-call pathogen#incubate()
+call pathogen#infect()
 colorscheme solarized
 set background=dark
 call togglebg#map("bg")
 
-" =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+" =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 " BASIC OPTIONS
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 set nocompatible          " Make vim behave better than vi-compatible mode
@@ -158,5 +159,4 @@ nnoremap <leader>t :TagbarToggle<CR>
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "Extras, for testing out possible canidates
-
 "=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
