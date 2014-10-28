@@ -1,6 +1,6 @@
 " Set the color scheme
 call pathogen#infect()
-colorscheme solarized
+colorscheme default 
 set background=dark
 call togglebg#map("bg")
 

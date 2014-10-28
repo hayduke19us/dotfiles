@@ -1,6 +1,10 @@
 # git
 ok brew git
+ok brew hub
+ok brew tig
 ok brew rbenv
+ok brew tmux
+ok brew reattach-to-user-namespace
 ok brew ruby-build
 ok cask heroku-toolbelt
 
@@ -33,4 +37,4 @@ ok github Raimondi/delimitMate
 ok github majutsushi/tagbar
 
 ok brew ctags
-
+ok brew graphviz

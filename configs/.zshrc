@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+export EDITOR=/usr/local/bin/vim
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -9,6 +11,8 @@ ZSH_THEME="xiong-chiamiov"
 
 # Set tmux in 256 color mode (make vim look better)
 alias tmux='TERM=xterm-256color tmux'
+
+alias git='nocorrect hub'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -55,5 +59,11 @@ export RBENV_ROOT=/usr/local/var/rbenv
 # enable shims and autocompletion for .rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-### Added by the Heroku Toolbelt
+# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# alias for tmuxinator
+alias mux="tmuxinator"
+
+#dont allow tmux to rename my windows
+export DISABLE_AUTO_TITLE="true"
