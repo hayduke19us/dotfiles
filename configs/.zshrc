@@ -60,10 +60,20 @@ export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=/usr/local/heroku/bin:$PATH
 
 # alias for tmuxinator
 alias mux="tmuxinator"
 
-#dont allow tmux to rename my windows
+# alias for bork cli.sh file
+alias cli_run="cd && bork satisfy code/dotfiles/install/cli.sh"
+alias cli_check="cd && bork status code/dotfiles/install/cli.sh"
+
+# dont allow tmux to rename my windows
 export DISABLE_AUTO_TITLE="true"
+
+# papertrail alias
+alias pt="papertrail"
+
+# color papertrail alias
+alias colorpaper="papertrail -f -d 5 | colortail -g papertrail"
