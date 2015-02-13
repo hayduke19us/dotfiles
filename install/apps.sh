@@ -1,6 +1,3 @@
-ok brew # Ensure homebrew is installed
-ok brew brew-cask  # Ensure cask is installed
-
 # tools
 ok cask iterm2
 
