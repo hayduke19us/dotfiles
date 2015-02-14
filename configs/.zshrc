@@ -48,7 +48,7 @@ plugins=(rails git git-extras ruby web-search)
 
 # Set xcode, homebrew & mysql paths
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Applications/Postgres.app:$HOME/bin:$HOME/code/bork/bin:$PATH
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,6 +67,8 @@ alias mux="tmuxinator"
 
 # alias for bork cli.sh file
 alias cli_run="cd && bork satisfy code/dotfiles/install/cli.sh"
+alias gem_run="cd && bork satisfy code/dotfiles/install/gem.sh"
+alias gem_check="cd && bork satisfy code/dotfiles/install/gem.sh"
 alias cli_check="cd && bork status code/dotfiles/install/cli.sh"
 
 # dont allow tmux to rename my windows

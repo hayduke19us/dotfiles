@@ -7,7 +7,7 @@ ok cask minecraft
 
 # storage
 ok cask dropbox
-ok cask onepassword
+ok cask 1password
 
 # databases
 ok cask postgres
