@@ -1,0 +1,9 @@
+Groupings = {
+  'papertrail' => [
+    { :match => /postgresql/,     color: :blue },
+    { :match => /200/,            color: :green },
+    { :match => /400/,            color: :red },
+    { :match => /Error/,          color: :red },
+    { :match => /302/,            color: :cyan }
+  ]
+}
