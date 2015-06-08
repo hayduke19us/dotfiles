@@ -6,6 +6,7 @@ ok brew hub
 ok brew tig
 ok brew rbenv
 ok brew tmux
+ok brew node
 ok brew httpie
 ok brew reattach-to-user-namespace
 ok brew ruby-build

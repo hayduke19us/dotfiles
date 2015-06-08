@@ -7,8 +7,7 @@ export EDITOR=/usr/local/bin/vim
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="xiong-chiamiov"
-
+ZSH_THEME='random'
 # Set tmux in 256 color mode (make vim look better)
 alias tmux='TERM=xterm-256color tmux'
 
@@ -77,3 +76,4 @@ alias pt="papertrail"
 
 # color papertrail alias
 alias colorpaper="papertrail -f -d 5 | colortail -g papertrail"
+alias Pbuddy="/usr/libexec/PlistBuddy"

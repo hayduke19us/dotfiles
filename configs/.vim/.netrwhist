@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/mcsullivan/Paradigmisr/field_journal/app/assets/fonts'
-let g:netrw_dirhist_2='/Users/mcsullivan/Paradigmisr/field_journal/app/assets'
-let g:netrw_dirhist_3='/Users/mcsullivan/Paradigmisr/field_journal/app'
-let g:netrw_dirhist_4='/Users/mcsullivan/Paradigmisr/field_journal/app/assets'
-let g:netrw_dirhist_5='/Users/mcsullivan/Paradigmisr/field_journal/app/assets/stylesheets'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/mcsullivan/Paradigmisr/field_journal/config'
+let g:netrw_dirhist_2='/Users/mcsullivan/Paradigmisr/field_journal'
+let g:netrw_dirhist_3='/Users/mcsullivan/Paradigmisr/field_journal/test/controllers/api/v1'
+let g:netrw_dirhist_4='/Users/mcsullivan/Paradigmisr/field_journal/app/controllers/api'
+let g:netrw_dirhist_5='/Users/mcsullivan/Paradigmisr/field_journal/test/controllers/api/v1'
 let g:netrw_dirhist_6='/Users/mcsullivan/Paradigmisr/field_journal'
+let g:netrw_dirhist_7='/Users/mcsullivan/Paradigmisr/field_journal/app/controllers'
+let g:netrw_dirhist_8='/Users/mcsullivan/Paradigmisr/field_journal/test/controllers/api/v1'
+let g:netrw_dirhist_9='/Users/mcsullivan/Paradigmisr/field_journal'
