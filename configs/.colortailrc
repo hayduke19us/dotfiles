@@ -1,9 +1,11 @@
 Groupings = {
   'papertrail' => [
-    { :match => /postgresql/,     color: :blue },
-    { :match => /200/,            color: :green },
-    { :match => /400/,            color: :red },
-    { :match => /Error/,          color: :red },
-    { :match => /302/,            color: :cyan }
+    { :match => /code=H10/,            color: :red },
+    { :match => /code=H12/,            color: :red, attribute: :bright },
+    { :match => /code=R12/,            color: :cyan },
+    { :match => /code=R14/,            color: :magenta },
+    { :match => /status=404/,          color: :red, attributes: :reverse },
+    { :match => /status=200/,          color: :green},
+    { :match => /status=301/,          color: :green, attribute: :bright}
   ]
 }
