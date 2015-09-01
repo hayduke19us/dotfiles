@@ -2,6 +2,7 @@ ok brew
 ok brew brew-cask
 
 ok brew git
+ok brew imagemagick
 ok brew hub
 ok brew tig
 ok brew rbenv
