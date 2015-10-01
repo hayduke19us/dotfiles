@@ -117,8 +117,8 @@ filetype plugin indent on
 filetype plugin on
 augroup pencil
   autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init()
+  autocmd FileType markdown,mkd,md call pencil#init()
+  autocmd FileType text call pencil#init()
 augroup END
  
 " ruby and yaml indentation
@@ -128,8 +128,11 @@ autocmd BufNewFile,BufRead config.ru   setfiletype ruby
 autocmd BufNewFile,BufRead *.jst       setfiletype eruby.html
  
 " markdown files
-autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set softtabstop=4 shiftwidth=4 tabstop=4
-autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set noexpandtab
+ autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set softtabstop=4 shiftwidth=4 tabstop=4
+ autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set noexpandtab
+
+" for vim-markdown
+let g:vim_markdown_folding_disabled=1
  
 " set filetype on config files
 autocmd BufNewFile,BufRead ~/.vim/*  setfiletype vim
