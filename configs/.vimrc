@@ -1,5 +1,8 @@
-" Set the color scheme
 call pathogen#infect()
+
+" Greet me
+echo '(>^.^<)'
+
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 " BASIC OPTIONS
@@ -71,7 +74,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:netrw_liststyle=3
 
 "EDITING OPTIONS
-set number      " line numbers
+set number "show absolute number for the active line"
+set relativenumber " relative line numbers for movement(toggle with <C>-n)
 set showbreak=+ " display a + at the beginning of a wrapped line
 set showmatch   " flash the matching bracket on inserting a )]} etc
  
@@ -169,3 +173,16 @@ nnoremap <leader>t :TagbarToggle<CR>
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "Extras, for testing out possible canidates
 "=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
+" Toggle relative number
+function! NumberToggle()
+  if &relativenumber
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+autocmd InsertEnter * :set nornu
+autocmd InsertLeave * :set rnu
+
+nnoremap <C-n> :call NumberToggle()<cr>
