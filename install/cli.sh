@@ -23,6 +23,8 @@ ok brew npm
 ok brew unixodbc
 # CLI tool for heroku
 ok cask heroku-toolbelt
+# redis key: value storage solution
+ok brew redis
 
 ok directory $HOME/code
 ok directory $HOME/code/dotfiles

@@ -1,9 +1,5 @@
 " Set the color scheme
 call pathogen#infect()
-colorscheme solarized 
-set background=dark
-call togglebg#map("bg")
-
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 " BASIC OPTIONS
@@ -20,7 +16,11 @@ set encoding=utf-8
 set splitright            " Make new vsplits open to the right of current buffer
 set splitbelow            " Make new horiz splits open below current buffer
 
+" solarized set up 'iterm > profile > colors > presets = solarized dark'
 syntax enable " Turn on syntax highlighting
+call togglebg#map("bg")
+set background=light
+colorscheme solarized
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "KEY BINDINGS
@@ -133,10 +133,10 @@ autocmd BufNewFile,BufRead *.jst       setfiletype eruby.html
 
 " for vim-markdown
 let g:vim_markdown_folding_disabled=1
- 
+
 " set filetype on config files
 autocmd BufNewFile,BufRead ~/.vim/*  setfiletype vim
- 
+
 set ruler          " shows cursor position in the lower right
 set showcmd        " shows incomplete command to the left of the ruler
 set winminheight=0 " allow windows to be 0 lines tall
