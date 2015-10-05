@@ -1,9 +1,5 @@
 call pathogen#infect()
 
-" Greet me
-echo '(>^.^<)'
-
-
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 " BASIC OPTIONS
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -89,7 +85,10 @@ set expandtab     " no tabs
  
 " Using autocmd for this allows it to be reset every time you open a
 " file, which keeps overrides from being persistent
-autocmd FileType * set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
+augroup set_file_tab
+  au!
+  au FileType * set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
+augroup END
  
 set list                     " show whitespace
 set listchars=tab:»·,trail:· " show tabs and trailing spaces
@@ -117,13 +116,13 @@ endif
 
 "FILETYPE OPTIONS
 " use filetype plugins to determine indent settings
-filetype plugin indent on
-filetype plugin on
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd,md call pencil#init()
-  autocmd FileType text call pencil#init()
-augroup END
+" filetype plugin indent on
+" filetype plugin on
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd,md call pencil#init()
+"   autocmd FileType text call pencil#init()
+" augroup END
  
 " ruby and yaml indentation
 autocmd FileType ruby,rdoc,cucumber,yaml,html,eruby set softtabstop=2 shiftwidth=2 tabstop=2
@@ -132,14 +131,11 @@ autocmd BufNewFile,BufRead config.ru   setfiletype ruby
 autocmd BufNewFile,BufRead *.jst       setfiletype eruby.html
  
 " markdown files
- autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set softtabstop=4 shiftwidth=4 tabstop=4
- autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set noexpandtab
-
-" for vim-markdown
-let g:vim_markdown_folding_disabled=1
+ " autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set softtabstop=4 shiftwidth=4 tabstop=4
+ " autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set noexpandtab
 
 " set filetype on config files
-autocmd BufNewFile,BufRead ~/.vim/*  setfiletype vim
+" autocmd BufNewFile,BufRead ~/.vim/*  setfiletype vim
 
 set ruler          " shows cursor position in the lower right
 set showcmd        " shows incomplete command to the left of the ruler
@@ -174,15 +170,14 @@ nnoremap <leader>t :TagbarToggle<CR>
 "Extras, for testing out possible canidates
 "=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
 " Toggle relative number
-function! NumberToggle()
-  if &relativenumber
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
 
+nnoremap <silent><leader>n :set rnu! rnu?<cr>
 autocmd InsertEnter * :set nornu
 autocmd InsertLeave * :set rnu
 
-nnoremap <C-n> :call NumberToggle()<cr>
+" auto cmd group to source .vimrc if change occurrs
+augroup watchvimrc
+  au!
+  au BufWritePost .vimrc so $MYVIMRC
+  echo '.vimrc sourced'
+augroup END
