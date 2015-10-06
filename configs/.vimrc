@@ -116,26 +116,35 @@ endif
 
 "FILETYPE OPTIONS
 " use filetype plugins to determine indent settings
-" filetype plugin indent on
-" filetype plugin on
-" augroup pencil
-"   autocmd!
-"   autocmd FileType markdown,mkd,md call pencil#init()
-"   autocmd FileType text call pencil#init()
-" augroup END
- 
+filetype plugin indent on
+filetype plugin on
+augroup pencil
+  au!
+  autocmd FileType markdown,mkd,md call pencil#init()
+  autocmd FileType text call pencil#init()
+augroup END
+
 " ruby and yaml indentation
-autocmd FileType ruby,rdoc,cucumber,yaml,html,eruby set softtabstop=2 shiftwidth=2 tabstop=2
-autocmd BufNewFile,BufRead Gemfile     setfiletype ruby
-autocmd BufNewFile,BufRead config.ru   setfiletype ruby
-autocmd BufNewFile,BufRead *.jst       setfiletype eruby.html
+augroup indent_by_type
+  au!
+  autocmd FileType ruby,rdoc,cucumber,yaml,html,eruby set softtabstop=2 shiftwidth=2 tabstop=2
+  autocmd BufNewFile,BufRead Gemfile     setfiletype ruby
+  autocmd BufNewFile,BufRead config.ru   setfiletype ruby
+  autocmd BufNewFile,BufRead *.jst       setfiletype eruby.html
+augroup END
  
 " markdown files
- " autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set softtabstop=4 shiftwidth=4 tabstop=4
- " autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set noexpandtab
+augroup markdown
+  au!
+  autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set softtabstop=4 shiftwidth=4 tabstop=4
+  autocmd BufRead,BufNewFile *.mkd,*.markdown,*.md,*.mdown,*.mkdn set noexpandtab
+augroup END
 
 " set filetype on config files
-" autocmd BufNewFile,BufRead ~/.vim/*  setfiletype vim
+augroup set_config_file_type
+  au!
+  autocmd BufNewFile,BufRead ~/.vim/* setfiletype vim
+augroup END
 
 set ruler          " shows cursor position in the lower right
 set showcmd        " shows incomplete command to the left of the ruler
@@ -172,12 +181,17 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Toggle relative number
 
 nnoremap <silent><leader>n :set rnu! rnu?<cr>
-autocmd InsertEnter * :set nornu
-autocmd InsertLeave * :set rnu
+
+augroup rnu_insert
+  autocmd InsertEnter * :set nornu
+  autocmd InsertLeave * :set rnu
+augroup END
 
 " auto cmd group to source .vimrc if change occurrs
 augroup watchvimrc
   au!
   au BufWritePost .vimrc so $MYVIMRC
-  echo '.vimrc sourced'
 augroup END
+
+" slime for copying vim text to irb
+let g:slime_target = "tmux"

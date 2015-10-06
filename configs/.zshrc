@@ -85,4 +85,3 @@ alias ack="ack --color-filename=Green"
 
 # source .zshrc
 alias reload=". ~/.zshrc && echo 'reloaded .zshrc'"
-alias zshrc="vim ~/.zshrc && reload"
