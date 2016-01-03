@@ -41,7 +41,7 @@ plugins=(rails git git-extras ruby web-search)
 source $ZSH/oh-my-zsh.sh
 
 # Path, and env
-. './env.sh'
+. $HOME/.env.sh
 
 # Alias'
-. './alias.sh'
+. $HOME/.al.sh
