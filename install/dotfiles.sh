@@ -14,9 +14,17 @@ ok directory dotfiles/configs/.vim/colors
 path=$HOME/code/dotfiles/configs/.vim/autoload
 destination $path
 ok github tpope/vim-pathogen
-[ -a $path/tope/vim-pathogen/autoload/pathogen.vim ] && \
-  echo "Moving pathogen.vim to .vim/autoload" && \
-  mv $path/vim-pathogen/autoload/pathogen.vim pathogen.vim
+
+if [ $? -gt 0 ]; then
+  if [ -f $path/vim-pathogen/autoload/pathogen.vim ]; then
+    echo "Copying pathogen.vim to .vim/autoload" && \
+    cp $path/vim-pathogen/autoload/pathogen.vim $path/pathogen.vim
+  elif [ -f  $path/pathogen.vim ]; then
+    echo "The file has already been moved"
+  else
+    echo "The file can't be found"
+  fi
+fi
 
 destination $HOME/code/dotfiles/configs/.vim/bundle
 ok github tpope/vim-bundler
