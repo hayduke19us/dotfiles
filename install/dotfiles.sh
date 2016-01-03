@@ -1,15 +1,15 @@
 # Sets up dotfiles
 
-destination $HOME
 ok directory $HOME/code
-ok github hayduke19us/dotfiles
 
-ok directory $HOME/code/dotfiles
-ok directory $HOME/code/dotfiles/configs
-ok directory $HOME/code/dotfiles/configs/.vim
-ok directory $HOME/code/dotfiles/configs/.vim/bundle
-ok directory $HOME/code/dotfiles/configs/.vim/autoload
-ok directory $HOME/code/dotfiles/configs/.vim/colors
+destination $HOME/code
+ok github hayduke19us/dotfiles
+ok directory /dotfiles
+ok directory /dotfiles/configs
+ok directory /dotfiles/configs/.vim
+ok directory /dotfiles/configs/.vim/bundle
+ok directory /dotfiles/configs/.vim/autoload
+ok directory /dotfiles/configs/.vim/colors
 
 path=$HOME/code/dotfiles/configs/.vim/autoload
 destination $path
