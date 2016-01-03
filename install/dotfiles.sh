@@ -5,11 +5,19 @@ ok directory $HOME/code
 destination $HOME/code
 ok github hayduke19us/dotfiles
 ok directory dotfiles
-ok directory dotfiles/configs
-ok directory dotfiles/configs/.vim
-ok directory dotfiles/configs/.vim/bundle
-ok directory dotfiles/configs/.vim/autoload
-ok directory dotfiles/configs/.vim/colors
+ok directory configs
+
+destination $HOME/code/dotfiles/configs
+ok directory .vim
+ok directory .vim/bundle
+ok directory .vim/autoload
+ok directory .vim/colors
+ok file .colortailrc
+ok file .ruby-version
+ok file .tmux.conf
+ok file .vimrc
+ok file .zshrc
+ok file .zshprofile
 
 path=$HOME/code/dotfiles/configs/.vim/autoload
 destination $path
