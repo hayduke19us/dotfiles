@@ -4,17 +4,19 @@ ok directory $HOME/code
 
 destination $HOME/code
 ok github hayduke19us/dotfiles
-ok directory /dotfiles
-ok directory /dotfiles/configs
-ok directory /dotfiles/configs/.vim
-ok directory /dotfiles/configs/.vim/bundle
-ok directory /dotfiles/configs/.vim/autoload
-ok directory /dotfiles/configs/.vim/colors
+ok directory dotfiles
+ok directory dotfiles/configs
+ok directory dotfiles/configs/.vim
+ok directory dotfiles/configs/.vim/bundle
+ok directory dotfiles/configs/.vim/autoload
+ok directory dotfiles/configs/.vim/colors
 
 path=$HOME/code/dotfiles/configs/.vim/autoload
 destination $path
 ok github tpope/vim-pathogen
-mv $path/vim-pathogen/autoload/pathogen.vim pathogen.vim
+[ -a $path/tope/vim-pathogen/autoload/pathogen.vim ] && \
+  echo "Moving pathogen.vim to .vim/autoload" && \
+  mv $path/vim-pathogen/autoload/pathogen.vim pathogen.vim
 
 destination $HOME/code/dotfiles/configs/.vim/bundle
 ok github tpope/vim-bundler
