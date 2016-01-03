@@ -43,5 +43,5 @@ ok brew redis
 # ctags
 ok brew ctags
 
-# graphing 
+# graphing
 ok brew graphviz

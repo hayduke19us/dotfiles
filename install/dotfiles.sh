@@ -23,8 +23,6 @@ if [ $? -gt 0 ]; then
   fi
 fi
 
-
-
 destination $HOME/code/dotfiles/configs/vim/bundle
 ok github tpope/vim-bundler
 ok github tpope/vim-fugitive
