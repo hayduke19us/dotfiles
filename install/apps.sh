@@ -1,26 +1,35 @@
-# tools
+# Tools
 ok cask iterm2
 
-# fun
-ok cask rdio
+# Fun
 ok cask minecraft
 
-# storage
+# Storage
 ok cask dropbox
+
+# Passwords
 ok cask 1password
 
 # databases
 ok cask postgres
 
-# ruby-stuff
-ok brew rbenv
-
-# email and communication
-ok cask mailbox
+# communication
 ok cask slack
+ok cask skype
 
-# browers
+# Browers
 ok cask google-chrome
 
-# servers
+# Dev environments
 ok cask vagrant
+
+# Virtual
+ok cask virtualbox
+
+# Database Managment
+ok cask sequel-pro
+ok cask postgres
+
+# Gives us access to older versions
+ok cask versions
+
