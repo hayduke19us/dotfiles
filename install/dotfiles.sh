@@ -5,10 +5,10 @@ ok github hayduke19us/dotfiles
 
 destination $HOME
 for file in $HOME/code/dotfiles/configs/*; do
-  echo "$file"
+  ok symlink ".$(basename $file)" $file
 done
 
-path=$HOME/code/dotfiles/configs/.vim/autoload
+path=$HOME/code/dotfiles/configs/vim/autoload
 destination $path
 ok github tpope/vim-pathogen
 
@@ -25,7 +25,7 @@ fi
 
 
 
-destination $HOME/code/dotfiles/configs/.vim/bundle
+destination $HOME/code/dotfiles/configs/vim/bundle
 ok github tpope/vim-bundler
 ok github tpope/vim-fugitive
 ok github tpope/vim-surround
