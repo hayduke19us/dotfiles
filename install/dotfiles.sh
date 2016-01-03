@@ -1,14 +1,20 @@
 # Sets up dotfiles
 
+destination $HOME
 ok directory $HOME/code
+ok github hayduke19us/dotfiles
+
 ok directory $HOME/code/dotfiles
 ok directory $HOME/code/dotfiles/configs
 ok directory $HOME/code/dotfiles/configs/.vim
 ok directory $HOME/code/dotfiles/configs/.vim/bundle
 ok directory $HOME/code/dotfiles/configs/.vim/autoload
+ok directory $HOME/code/dotfiles/configs/.vim/colors
 
-destination $HOME/code/dotfiles/configs/.vim/autoload
+path=$HOME/code/dotfiles/configs/.vim/autoload
+destination $path
 ok github tpope/vim-pathogen
+mv $path/vim-pathogen/autoload/pathogen.vim pathogen.vim
 
 destination $HOME/code/dotfiles/configs/.vim/bundle
 ok github tpope/vim-bundler
@@ -29,5 +35,4 @@ ok github Raimondi/delimitMate
 ok github majutsushi/tagbar
 ok github jpalardy/vim-slime
 ok github rstacruz/sparkup
-
 
