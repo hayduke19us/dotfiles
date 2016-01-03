@@ -1,23 +1,12 @@
 # Sets up dotfiles
-
 ok directory $HOME/code
-
 destination $HOME/code
 ok github hayduke19us/dotfiles
-ok directory dotfiles
-ok directory configs
 
-destination $HOME/code/dotfiles/configs
-ok directory .vim
-ok directory .vim/bundle
-ok directory .vim/autoload
-ok directory .vim/colors
-ok file .colortailrc
-ok file .ruby-version
-ok file .tmux.conf
-ok file .vimrc
-ok file .zshrc
-ok file .zshprofile
+destination $HOME
+for file in $HOME/code/dotfiles/configs/*; do
+  echo "$file"
+done
 
 path=$HOME/code/dotfiles/configs/.vim/autoload
 destination $path
@@ -33,6 +22,8 @@ if [ $? -gt 0 ]; then
     echo "The file can't be found"
   fi
 fi
+
+
 
 destination $HOME/code/dotfiles/configs/.vim/bundle
 ok github tpope/vim-bundler
