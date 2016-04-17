@@ -1,6 +1,3 @@
-# Set tmux in 256 color mode (make vim look better)
-alias tmux='TERM=xterm-256color tmux'
-
 # Set git command to use hub
 alias git='nocorrect hub'
 
