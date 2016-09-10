@@ -19,8 +19,3 @@ export PATH=/usr/local/heroku/bin:$PATH
 
 # dont allow tmux to rename my windows
 export DISABLE_AUTO_TITLE="true"
-
-
-
-
-

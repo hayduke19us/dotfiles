@@ -1,4 +1,4 @@
-call pathogen#infect()
+execute pathogen#infect()
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 " BASIC OPTIONS
@@ -65,46 +65,42 @@ inoremap kj <Esc>
 " Use ag instead of ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" PLUGIN OPTIONS
-"NetRW *After Delete I have no longer had problems with stagnant buffers *
-" let g:netrw_liststyle=3
-
 "EDITING OPTIONS
 set number "show absolute number for the active line"
 set relativenumber " relative line numbers for movement(toggle with <C>-n)
 set showbreak=+ " display a + at the beginning of a wrapped line
 set showmatch   " flash the matching bracket on inserting a )]} etc
- 
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
- 
+
 set softtabstop=2 " most of the time, we want a softtabstop of 2
 set tabstop=2     " show tabs with 2 spaces
 set shiftwidth=2  " shift by 2 spaces when using >> and <<, etc
 set expandtab     " no tabs
- 
+
 " Using autocmd for this allows it to be reset every time you open a
 " file, which keeps overrides from being persistent
 augroup set_file_tab
   au!
   au FileType * set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
 augroup END
- 
+
 set list                     " show whitespace
 set listchars=tab:»·,trail:· " show tabs and trailing spaces
 set listchars+=extends:»     " show a » when a line goes off the right edge of
 set listchars+=precedes:«    " show a « when a line goes off the left edge of
- 
+
 "FOLDING OPTIONS
 set foldenable       " enable folding
 set foldlevelstart=0 " start with all folds collapsed when switching buffers
 set foldcolumn=2     " adds two columns of fold status on the left-hand side of
- 
+
 "SEARCH OPTIONS
 set ignorecase " makes search patterns case-insensitive by default
 set smartcase  " overrides ignorecase when the pattern contains upper-case
 set incsearch
- 
+
 "SWAP & UNDO OPTIONS
 " global swapfile directory
 set directory=~/.vim/swapfiles,/var/tmp,/tmp,.
@@ -118,11 +114,11 @@ endif
 " use filetype plugins to determine indent settings
 filetype plugin indent on
 filetype plugin on
-augroup pencil
-  au!
-  autocmd FileType markdown,mkd,md call pencil#init()
-  autocmd FileType text call pencil#init()
-augroup END
+" augroup pencil
+"   au!
+"   autocmd FileType markdown,mkd,md call pencil#init()
+"   autocmd FileType text call pencil#init()
+" augroup END
 
 " ruby and yaml indentation
 augroup indent_by_type
@@ -131,8 +127,9 @@ augroup indent_by_type
   autocmd BufNewFile,BufRead Gemfile     setfiletype ruby
   autocmd BufNewFile,BufRead config.ru   setfiletype ruby
   autocmd BufNewFile,BufRead *.jst       setfiletype eruby.html
+  autocmd BufNewFile,BufRead *.rl        setfiletype ragel
 augroup END
- 
+
 " markdown files
 augroup markdown
   au!
@@ -151,7 +148,7 @@ set showcmd        " shows incomplete command to the left of the ruler
 set winminheight=0 " allow windows to be 0 lines tall
 set winminwidth=0  " allow windows to be 0 lines wide
 set laststatus=2   " always show statusline
- 
+
 " set up statusline, ends up looking like this:
 "   [1] window.vimrc [Preview] [vim,+]            @ L22 C51 (66%)(14)
 set statusline=
@@ -170,6 +167,13 @@ set statusline+=@\ L%l\ C%c\ (%P)(%L)\    " position in file and number of lines
 " Ctrlp
 nnoremap <leader>. :CtrlP<cr>
 nnoremap <leader>/ :CtrlPTag<cr>
+
+" ignore
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+
 
 " TagBar
 nnoremap <leader>t :TagbarToggle<CR>

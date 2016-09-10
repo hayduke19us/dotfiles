@@ -45,3 +45,15 @@ ok brew ctags
 
 # graphing
 ok brew graphviz
+
+# Gosu game building framework, dependencies
+ok brew sdl2 libogg libvorbis
+
+# decompressing rar
+ok brew unrar
+
+# jq json parsing
+ok brew jq
+
+# ag ack alternative
+ok brew ag
