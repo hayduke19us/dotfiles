@@ -40,6 +40,7 @@ ZSH_THEME="arrow"
 plugins=(rails git git-extras ruby web-search)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # Path, and env
 . $HOME/.env.sh
@@ -49,5 +50,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom Functions
 . $HOME/.functions.sh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

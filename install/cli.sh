@@ -19,23 +19,20 @@ ok brew rbenv
 # screen multi plexer
 ok brew tmux
 
+# ssh pairing
+ok brew tmate
+
 # tool making http request easy from the command line
 ok brew httpie
 
 # needed for copy and paste in tmux
 ok brew reattach-to-user-namespace
 
-# version control with rbenv
-ok brew ruby-build
-
 # node package manager
 ok brew npm
 
 # open database connection tool, needed for ruby-obcd
 ok brew unixodbc
-
-# CLI tool for heroku
-ok cask heroku-toolbelt
 
 # redis key: value storage solution
 ok brew redis

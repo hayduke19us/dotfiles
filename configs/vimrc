@@ -1,3 +1,4 @@
+set exrc
 execute pathogen#infect()
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
@@ -20,6 +21,9 @@ syntax enable " Turn on syntax highlighting
 call togglebg#map("bg")
 set background=light
 colorscheme solarized
+
+" pairing colorscheme
+:command Pair colorscheme default
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "KEY BINDINGS
@@ -63,7 +67,9 @@ nnoremap <NL> i<CR><ESC>
 inoremap kj <Esc>
 
 " Use ag instead of ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 "EDITING OPTIONS
 set number "show absolute number for the active line"
@@ -168,16 +174,29 @@ set statusline+=@\ L%l\ C%c\ (%P)(%L)\    " position in file and number of lines
 nnoremap <leader>. :CtrlP<cr>
 nnoremap <leader>/ :CtrlPTag<cr>
 
-" ignore
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_cmd = 'CtrlPMixed'
+set autochdir
 
+ " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+ if executable('ag')
+   " Use Ag over Grep
+   set grepprg=ag\ --nogroup\ --nocolor
+
+   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+   " let g:ctrlp_use_caching = 0
+ endif
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git|\.yardoc|public|log|tmp|node_modules$\',
+  \ 'file': '\*.so|\*.dat|\.DS_Store|*.zip|*.swp$\'
+  \ }
 
 " TagBar
 nnoremap <leader>t :TagbarToggle<CR>
-
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "Extras, for testing out possible canidates
@@ -199,3 +218,19 @@ augroup END
 
 " slime for copying vim text to irb
 let g:slime_target = "tmux"
+
+" Break line by comma
+let @c="f,wi"
+
+" Break xml lines
+let @x="wf<i"
+
+" Clojure
+
+" Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+set secure

@@ -71,7 +71,32 @@ diagram () {
 dir_stats () {
   local -a all_options
   all_options=parse_options $*
+}
 
+# git delete merged branches
+prune () {
+  local border="=-=-=-=-=-=-=-=-=-="
+  local current=$(git rev-parse --abbrev-ref HEAD)
+  local not_removed=()
+
+  echo "Merged branches removed"
+  echo $border
+
+  for branch in $(gb --merged)
+  do
+    if [[ $current != $branch && $branch != "master" && $branch != "*" ]]
+    then
+      gb -d $branch
+    else
+      [[ $branch != '*' ]] && not_removed+=($branch)
+    fi
+  done
+  echo "Merged branches not removed"
+  echo $not_removed
+}
+
+vim_pair_init () {
+  ln -s ~/.vim-pair ./.vimrc
 }
 
 . $HOME/dotfiles/configs/tab.sh

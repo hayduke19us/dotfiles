@@ -7,52 +7,44 @@ ok brew git
 # sizing images
 ok brew imagemagick
 
-# extends git CLI with more commands
-ok brew hub
-
-# tool for visualizing git logs
-ok brew tig
-
-# screen multi plexer
-ok brew tmux
-
-# ssh pairig
-ok brew tmate
-
-# tool making http request easy from the command line
-ok brew httpie
-
-# needed for copy and paste in tmux
-ok brew reattach-to-user-namespace
-
 # node package manager
 ok brew npm
 
-# graphing
-ok brew graphviz
-
 # lenigen clojure framework
-ok brew lenigen
+ok brew leiningen
 
 # swig
 ok brew swig
-
-# brew versions, gives access to older versions
-ok brew versions
 
 # use `brew services list` to see available daemons
 # redis key: value storage solution
 ok brew redis
 
 # msql
-ok brew mysql55
+ok brew mysql@5.5
 ok brew mysql++
 
 # rabbitmq
 ok brew rabbitmq
 
 # mongodb
-ok brew mongodb26
+ok brew mongodb32
+
+# chefdk
+ok cask chefdk
+
+# dev-server
+# Initial Setup:
+# sudo puma-dev -setup
+# * Configuring /etc/resolver to be owned by mattsullivan
+# * Changing '/etc/resolver/dev' to be owned by mattsullivan
+# puma-dev install
+# * Adding certification to login keychain as trusted
+# ! There is probably a dialog open that you must type your password into
+# * Certificates setup, ready for https operations!
+# * Use '/usr/local/Cellar/puma-dev/0.10/bin/puma-dev' as the location of puma-dev
+# * Installed puma-dev on ports: http 80, https 443
+ok brew puma/puma/puma-dev
 
 # rvm
 if [ -z 'rvm' ]; then
@@ -63,11 +55,12 @@ else
 fi
 
 # Install rubies
-falcon='ruby-1.9.3-p327-falcon'
+# last_ruby='ruby-1.9.3-p327-falcon'
+current_ruby=ruby-2.1.9
 
-if [ -z "rvm $falcon" ]; then
-  echo 'Installing ruby-1.9.3-p327-falcon'
+if [ -z "rvm $current_ruby" ]; then
+  echo "Installing $current_ruby"
   rvm $falcon
 else
-  echo "Falcon has landed"
+  echo "Current ruby $current_ruby is already installed"
 fi
