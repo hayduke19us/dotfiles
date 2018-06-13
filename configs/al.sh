@@ -42,3 +42,20 @@ alias hb_x_sig="echo -n 'ka7pg8s3577ckkpwnjzdbr2eMXybDMQWyJ$(date +%s)' | shasum
 
 # Pairing
 alias vim_pair="vim -u ~/.vimrc-pair $1"
+
+# ruby-version and ruby-gemset symbolic link
+alias set_ruby="ln -s .ruby-version.example .ruby-version && ln -s .ruby-gemset.example .ruby-gemset"
+
+# Make a Pathogen plugin
+# potion/
+#     README
+#     LICENSE
+#     doc/
+#         potion.txt
+#     ftdetect/
+#         potion.vim
+#     ftplugin/
+#         potion.vim
+#     syntax/
+#         potion.vim
+#     ... etc ...

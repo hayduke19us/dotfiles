@@ -96,7 +96,7 @@ prune () {
 }
 
 vim_pair_init () {
-  ln -s ~/.vim-pair ./.vimrc
+  ln -s ~/.vimrc-pair ./.vimrc
 }
 
 . $HOME/dotfiles/configs/tab.sh

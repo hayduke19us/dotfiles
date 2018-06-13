@@ -54,3 +54,25 @@ ok brew jq
 
 # ag ack alternative
 ok brew ag
+
+# Tree like linux
+ok brew tree
+
+# Databases
+
+# InfluxDB
+ok brew influxdb   # http://localhost:8086
+ok brew kapacitor  # http://localhost:9092
+ok brew telegraf
+ok brew chronograf # http://localhost:8888
+
+# Grafana
+ok brew grafana
+
+# Irssi, for freenode
+ok brew irssi
+
+# Bats
+ok brew tap kaos/shell
+ok brew bats-assert
+ok brew bats-file

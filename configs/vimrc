@@ -1,4 +1,3 @@
-set exrc
 execute pathogen#infect()
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
@@ -13,17 +12,13 @@ set noswapfile            " Swap files annoy me.
 set textwidth=80
 set colorcolumn=+1        " Stick with short lines.
 set encoding=utf-8
-set splitright            " Make new vsplits open to the right of current buffer
+set splitright            " Make new vsplits 
 set splitbelow            " Make new horiz splits open below current buffer
 
 " solarized set up 'iterm > profile > colors > presets = solarized dark'
 syntax enable " Turn on syntax highlighting
 call togglebg#map("bg")
-set background=light
 colorscheme solarized
-
-" pairing colorscheme
-:command Pair colorscheme default
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "KEY BINDINGS
@@ -73,7 +68,7 @@ endif
 
 "EDITING OPTIONS
 set number "show absolute number for the active line"
-set relativenumber " relative line numbers for movement(toggle with <C>-n)
+" set relativenumber " relative line numbers for movement(toggle with <C>-n)
 set showbreak=+ " display a + at the beginning of a wrapped line
 set showmatch   " flash the matching bracket on inserting a )]} etc
 
@@ -120,11 +115,6 @@ endif
 " use filetype plugins to determine indent settings
 filetype plugin indent on
 filetype plugin on
-" augroup pencil
-"   au!
-"   autocmd FileType markdown,mkd,md call pencil#init()
-"   autocmd FileType text call pencil#init()
-" augroup END
 
 " ruby and yaml indentation
 augroup indent_by_type
@@ -169,7 +159,6 @@ set statusline+=]                         " close bracket
 set statusline+=%=                        " right-align remainder
 set statusline+=@\ L%l\ C%c\ (%P)(%L)\    " position in file and number of lines
 
-
 " Ctrlp
 nnoremap <leader>. :CtrlP<cr>
 nnoremap <leader>/ :CtrlPTag<cr>
@@ -203,12 +192,12 @@ nnoremap <leader>t :TagbarToggle<CR>
 "=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=--=-=-=-=-=-=-=-
 " Toggle relative number
 
-nnoremap <silent><leader>n :set rnu! rnu?<cr>
+" nnoremap <silent><leader>n :set rnu! rnu?<cr>
 
-augroup rnu_insert
-  autocmd InsertEnter * :set nornu
-  autocmd InsertLeave * :set rnu
-augroup END
+" augroup rnu_insert
+"   autocmd InsertEnter * :set nornu
+"   autocmd InsertLeave * :set rnu
+" augroup END
 
 " auto cmd group to source .vimrc if change occurrs
 augroup watchvimrc
@@ -232,5 +221,3 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-set secure
