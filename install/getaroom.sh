@@ -64,3 +64,6 @@ if [ -z "rvm $current_ruby" ]; then
 else
   echo "Current ruby $current_ruby is already installed"
 fi
+
+# Aws console
+brew awscli

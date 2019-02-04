@@ -76,3 +76,6 @@ ok brew irssi
 ok brew tap kaos/shell
 ok brew bats-assert
 ok brew bats-file
+
+# kubernetes
+ok brew kubernetes
