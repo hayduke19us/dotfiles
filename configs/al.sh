@@ -46,6 +46,9 @@ alias vim_pair="vim -u ~/.vimrc-pair $1"
 # ruby-version and ruby-gemset symbolic link
 alias set_ruby="ln -s .ruby-version.example .ruby-version && ln -s .ruby-gemset.example .ruby-gemset"
 
+# Pretty Printing
+apias ppjson='python -m json.tool'
+
 # Make a Pathogen plugin
 # potion/
 #     README
