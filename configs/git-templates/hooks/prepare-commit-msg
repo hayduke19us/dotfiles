@@ -1,0 +1,20 @@
+#! /bin/sh
+
+# The goal of this file is to write the branches prefix into the commit message
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+parse_branch_name () {
+  local branch=$(git branch --show-current)
+  grep -o "\(DEV-\d*\)" <<< $branch
+}
+
+prepare_commit_msg () {
+ local jira_id=$(parse_branch_name)
+ local new_message="[${jira_id}]"
+ sed -i.bak -e "1s/^/${new_message} /" $COMMIT_MSG_FILE
+}
+
+prepare_commit_msg

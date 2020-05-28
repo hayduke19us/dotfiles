@@ -9,16 +9,19 @@ set cpoptions=aABceFsWZ   " Set various compatible options
 set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_Store,log/**,tmp/**,coverage/**,rdoc/**
 set list                  " Show whitespace
 set noswapfile            " Swap files annoy me.
-set textwidth=80
-set colorcolumn=+1        " Stick with short lines.
+set textwidth=100
+set colorcolumn=+4        " Stick with short lines.
 set encoding=utf-8
 set splitright            " Make new vsplits 
 set splitbelow            " Make new horiz splits open below current buffer
 
+" Column color
+" highlight ColorColumn ctermbg=1
+
 " solarized set up 'iterm > profile > colors > presets = solarized dark'
-syntax enable " Turn on syntax highlighting
+syntax on " Turn on syntax highlighting
 call togglebg#map("bg")
-colorscheme default
+colorscheme solarized
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "KEY BINDINGS
@@ -114,7 +117,6 @@ endif
 "FILETYPE OPTIONS
 " use filetype plugins to determine indent settings
 filetype plugin indent on
-filetype plugin on
 
 " ruby and yaml indentation
 augroup indent_by_type
@@ -178,7 +180,7 @@ let g:ctrlp_working_path_mode='wa'
  endif
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git|\.yardoc|public|log|tmp|node_modules$\',
+  \ 'dir':  '\.git|\.yardoc|public|log|tmp|node_modules|vendor$\',
   \ 'file': '\*.so|\*.dat|\.DS_Store|*.zip|*.swp$\'
   \ }
 
@@ -212,13 +214,14 @@ let @c="f,wi"
 " Break xml lines
 let @x="wf<i"
 
-" Clojure
+" Fireplace
+au Filetype clojure nmap <c-c><c-k> :Require<cr>
 
 " Rainbow Parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+autocmd VimEnter *       RainbowParenthesesToggle
+autocmd Syntax   clojure RainbowParenthesesLoadRound
+autocmd Syntax   clojure RainbowParenthesesLoadSquare
+autocmd Syntax   clojure RainbowParenthesesLoadBraces
 
 " Syntastic
 let g:syntastic_mode_map = {
@@ -233,7 +236,7 @@ let g:syntastic_style_error_symbol = "☢ "
 let g:syntastic_style_warning_symbol = "⚠"
 
 " - Ruby
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers = ['mri']
 
 " - Cucumber
 " Syntastic uses dry run. But this doesn't require external libs. So turning off
@@ -246,3 +249,6 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+
+" Bash Support
+let g:BASH_Excutable='/bin/zsh'

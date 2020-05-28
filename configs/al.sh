@@ -3,7 +3,10 @@ alias git='nocorrect hub'
 
 # Git shortcuts
 
+# Careful, this will delete the GAR release branches
 alias prune_merged='for file in $(gb --merged); do gb -d $file; done'
+alias prune_no_remote='git fetch -p && git branch -vv | awk /'/: gone]/{print $1}/' | xargs git branch -D'
+alias cherry-pick="git cherry-pick $1"
 
 # Tmux short cuts
 alias tmux-kill="tmux kill-session -t $1"
@@ -37,6 +40,9 @@ alias rev_parents_shollow="git rev-list --max-parents=1 --reverse --max-count=10
 alias my_ip="curl ipecho.net/plain ; echo"
 alias m_files="git ls-files -o --exclude-standard"
 
+# Not working
+alias only_commits="git log $1..HEAD | grep \"commit .*\" | grep -o \"[^commit].*\""
+
 # Hotel Beds content x-Signature
 alias hb_x_sig="echo -n 'ka7pg8s3577ckkpwnjzdbr2eMXybDMQWyJ$(date +%s)' | shasum -a 256"
 
@@ -47,7 +53,7 @@ alias vim_pair="vim -u ~/.vimrc-pair $1"
 alias set_ruby="ln -s .ruby-version.example .ruby-version && ln -s .ruby-gemset.example .ruby-gemset"
 
 # Pretty Printing
-apias ppjson='python -m json.tool'
+alias ppjson='python -m json.tool'
 
 # Make a Pathogen plugin
 # potion/
@@ -62,3 +68,10 @@ apias ppjson='python -m json.tool'
 #     syntax/
 #         potion.vim
 #     ... etc ...
+
+
+# kubectl 
+alias kube-dash="open http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/"
+
+alias date-all="date +%Y%m%d%H%M%S"
+alias make-changelog="touch price-sheet-story-entries-$(date-all).md"

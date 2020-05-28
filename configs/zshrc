@@ -54,3 +54,5 @@ source ~/.iterm2_shell_integration.`basename $SHELL`
 # jenv for use with switching Java installs
 eval "$(jenv init -)"
 
+# for shell access
+eval "$(pyenv init -)"
