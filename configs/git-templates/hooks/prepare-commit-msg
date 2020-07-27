@@ -14,7 +14,11 @@ parse_branch_name () {
 prepare_commit_msg () {
  local jira_id=$(parse_branch_name)
  local new_message="[${jira_id}]"
- sed -i.bak -e "1s/^/${new_message} /" $COMMIT_MSG_FILE
+ if jira_id && [[ ! $(grep "\[DEV-.*\]" $COMMIT_MSG_FILE) ]]; then
+   sed -i.bak -e "1s/^/${new_message} /" $COMMIT_MSG_FILE
+ else
+   echo "\nThere is no jira id in the branch name, not adding to commit message\n"
+ fi
 }
 
 prepare_commit_msg

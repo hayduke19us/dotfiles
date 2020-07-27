@@ -85,10 +85,10 @@ set expandtab     " no tabs
 
 " Using autocmd for this allows it to be reset every time you open a
 " file, which keeps overrides from being persistent
-augroup set_file_tab
-  au!
-  au FileType * set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
-augroup END
+" augroup set_file_tab
+"   au!
+"  au FileType * set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
+" augroup END
 
 set list                     " show whitespace
 set listchars=tab:»·,trail:· " show tabs and trailing spaces
@@ -116,7 +116,7 @@ endif
 
 "FILETYPE OPTIONS
 " use filetype plugins to determine indent settings
-filetype plugin indent on
+" filetype plugin indent on
 
 " ruby and yaml indentation
 augroup indent_by_type
@@ -218,15 +218,18 @@ let @x="wf<i"
 au Filetype clojure nmap <c-c><c-k> :Require<cr>
 
 " Rainbow Parentheses
-autocmd VimEnter *       RainbowParenthesesToggle
-autocmd Syntax   clojure RainbowParenthesesLoadRound
-autocmd Syntax   clojure RainbowParenthesesLoadSquare
-autocmd Syntax   clojure RainbowParenthesesLoadBraces
+" autocmd VimEnter * RainbowParenthesesToggle
+" autocmd Syntax clojure RainbowParenthesesLoadRound
+" autocmd Syntax clojure RainbowParenthesesLoadSquare
+" autocmd Syntax clojure RainbowParenthesesLoadBraces
+
+" luochen1990/rainbow
+let g:rainbow_active = 1
 
 " Syntastic
-let g:syntastic_mode_map = {
-  \ 'mode': 'active',
-  \ 'passive_filetypes': ['cucumber'] }
+"let g:syntastic_mode_map = {
+" \ 'mode': 'active',
+"  \ 'passive_filetypes': ['cucumber'] }
 
 let g:syntastic_cursor_column = 0
 
@@ -247,8 +250,8 @@ let g:syntastic_ruby_checkers = ['mri']
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 1
 
 " Bash Support
 let g:BASH_Excutable='/bin/zsh'
