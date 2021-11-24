@@ -5,7 +5,7 @@ Install:
 * [Xcode command line tools](https://developer.apple.com/xcode/features/) `xcode-select --install` 
 * [Homebrew](https://brew.sh/) `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 * [Git](https://help.github.com/articles/set-up-git/) 
-* [Bork](https://github.com/mattly/bork.git)  `brew install bork`
+* [Bork](https://github.com/mattly/bork.git)  `brew install bork` `https://github.com/skylarmacdonald/bork`
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * [tmux](https://tmuxguide.readthedocs.io/en/latest/tmux/tmux.html) `brew install tmux`
 
