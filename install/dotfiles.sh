@@ -4,19 +4,24 @@ cd $HOME/code
 ok github hayduke19us/dotfiles
 
 cd $HOME
-for file in $HOME/code/dotfiles/configs/*; do
+for file in code/dotfiles/configs/*; do
   ok symlink ".$(basename $file)" $file
 done
 
+# Prepare vim
+mkdir -p code/dotfiles/configs/vim/autoload
+mkdir -p code/dotfiles/configs/vim/bundle
+ok symlink code/dotfiles/configs/vim .vim
+
 path=$HOME/code/dotfiles/configs/vim/autoload
-cd  $path
+cd $path
 ok github tpope/vim-pathogen
 
 if [ $? -gt 0 ]; then
   if [ -f $path/vim-pathogen/autoload/pathogen.vim ]; then
     echo "Copying pathogen.vim to .vim/autoload" && \
     cp $path/vim-pathogen/autoload/pathogen.vim $path/pathogen.vim
-  elseif [ -f  $path/pathogen.vim ]; then
+  elif [ -f  $path/pathogen.vim ]; then
     echo "The file has already been moved"
   else
     echo "The file can't be found"
@@ -42,3 +47,7 @@ ok github Raimondi/delimitMate
 ok github majutsushi/tagbar
 ok github jpalardy/vim-slime
 ok github rstacruz/sparkup
+
+# Brew deps
+brew install tmux
+brew install tig

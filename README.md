@@ -7,6 +7,7 @@ Install:
 * [Git](https://help.github.com/articles/set-up-git/) 
 * [Bork](https://github.com/mattly/bork.git)  `brew install bork`
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [tmux](https://tmuxguide.readthedocs.io/en/latest/tmux/tmux.html) `brew install tmux`
 
 Create a code directory to clone the dotfiles into 
 
@@ -16,8 +17,8 @@ Create a code directory to clone the dotfiles into
 ```
 Run bork satisfy on configs/dotfiles.sh
 
-```bash 
-  bork/bin/bork satisfy code/dotfiles/install/dotfiles.sh
+```bash
+  bork satisfy code/dotfiles/install/dotfiles.sh
 ```
 
 Add bork/bin to your PATH in *.zshrc* or symlink it to the system's bin
