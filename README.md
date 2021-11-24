@@ -23,7 +23,7 @@ Run bork satisfy on configs/dotfiles.sh
 
 Add bork/bin to your PATH in *.zshrc* or symlink it to the system's bin
 
-```bash 
+```bash
   # Set path
   export PATH=$HOME/bork/bin:$PATH
 
@@ -32,11 +32,10 @@ Add bork/bin to your PATH in *.zshrc* or symlink it to the system's bin
 ```
 
 
-#### Notes 
+#### Notes
 
-**Issue with gem pg make sure path is set so pg can find pg_config** 
+**Issue with gem pg make sure path is set so pg can find pg_config**
 
-```bash 
+```bash
   export PATH=%PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin/
 ```
-
