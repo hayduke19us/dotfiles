@@ -16,7 +16,7 @@ if [ $? -gt 0 ]; then
   if [ -f $path/vim-pathogen/autoload/pathogen.vim ]; then
     echo "Copying pathogen.vim to .vim/autoload" && \
     cp $path/vim-pathogen/autoload/pathogen.vim $path/pathogen.vim
-  elif [ -f  $path/pathogen.vim ]; then
+  elseif [ -f  $path/pathogen.vim ]; then
     echo "The file has already been moved"
   else
     echo "The file can't be found"

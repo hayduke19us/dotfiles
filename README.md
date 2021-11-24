@@ -2,8 +2,8 @@
 
 Install:
 
-* [Xcode command line tools](https://developer.apple.com/xcode/features/) 
-* [Homebrew](ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)')
+* [Xcode command line tools](https://developer.apple.com/xcode/features/) `xcode-select --install` 
+* [Homebrew](https://brew.sh/) `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 * [Git](https://help.github.com/articles/set-up-git/) 
 * [Bork](https://github.com/mattly/bork.git) 
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
