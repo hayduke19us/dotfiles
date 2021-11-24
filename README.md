@@ -5,17 +5,8 @@ Install:
 * [Xcode command line tools](https://developer.apple.com/xcode/features/) `xcode-select --install` 
 * [Homebrew](https://brew.sh/) `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 * [Git](https://help.github.com/articles/set-up-git/) 
-* [Bork](https://github.com/mattly/bork.git) 
+* [Bork](https://github.com/mattly/bork.git)  `brew install bork`
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-```bash 
-  cd $HOME && \
-  xcode-select --install && \
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  && \
-  brew install git && \
-  git clone https://github.com/mattly/bork.git && \
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
-```
 
 Create a code directory to clone the dotfiles into 
 

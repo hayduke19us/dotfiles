@@ -1,15 +1,15 @@
 # Sets up dotfiles
 ok directory $HOME/code
-destination $HOME/code
+cd $HOME/code
 ok github hayduke19us/dotfiles
 
-destination $HOME
+cd $HOME
 for file in $HOME/code/dotfiles/configs/*; do
   ok symlink ".$(basename $file)" $file
 done
 
 path=$HOME/code/dotfiles/configs/vim/autoload
-destination $path
+cd  $path
 ok github tpope/vim-pathogen
 
 if [ $? -gt 0 ]; then
@@ -23,7 +23,7 @@ if [ $? -gt 0 ]; then
   fi
 fi
 
-destination $HOME/code/dotfiles/configs/vim/bundle
+cd $HOME/code/dotfiles/configs/vim/bundle
 ok github tpope/vim-bundler
 ok github tpope/vim-fugitive
 ok github tpope/vim-surround
@@ -42,4 +42,3 @@ ok github Raimondi/delimitMate
 ok github majutsushi/tagbar
 ok github jpalardy/vim-slime
 ok github rstacruz/sparkup
-
