@@ -40,7 +40,6 @@ ZSH_THEME="af-magic"
 plugins=(git git-extras ruby web-search)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # Path, and env
 . $HOME/.env.sh
@@ -50,6 +49,9 @@ source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # Custom Functions
 . $HOME/.functions.sh
+
+# rbenv
+eval "$(rbenv init - zsh)"
 
 # jenv for use with switching Java installs
 eval "$(jenv init -)"
