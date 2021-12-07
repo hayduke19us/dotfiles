@@ -41,6 +41,11 @@ plugins=(git git-extras ruby web-search)
 
 source $ZSH/oh-my-zsh.sh
 
+# BEGIN ZDI
+export DOCKER_FOR_MAC_ENABLED=true
+source /Users/matthew.sullivan/code/zendesk/zdi/dockmaster/zdi.sh
+# END ZDI
+
 # Path, and env
 . $HOME/.env.sh
 
@@ -58,3 +63,7 @@ eval "$(jenv init -)"
 
 # for shell access
 eval "$(pyenv init -)"
+
+# gcloud
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc

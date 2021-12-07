@@ -49,8 +49,13 @@ ok github jpalardy/vim-slime
 ok github rstacruz/sparkup
 
 # Brew deps
-brew install tmux
-brew install tig
+ok brew tmux
+ok brew tig
 # `https://github.com/rbenv/rbenv`, YAY no more rvm
-brew install rbenv 
-brew install jenv
+ok brew rbenv
+ok brew jenv
+# HTTP Helpers
+ok cask postman
+ok cask insomnia
+# System tools
+ok brew htop
