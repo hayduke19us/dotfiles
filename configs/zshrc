@@ -63,9 +63,6 @@ eval "$(pyenv init -)"
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
-#scooter
-source $ZENDESK_CODE_DIR/scooter/scripts/shell/scooter.sh
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -78,3 +75,8 @@ source /Users/matthew.sullivan/code/zendesk/zdi/dockmaster/zdi.sh
 
 # Zendesk Kubectl
 source ~/Code/zendesk/kubectl_config/dotfiles/kubectl_stuff.bash
+
+#scooter
+source $ZENDESK_CODE_DIR/scooter/scripts/shell/scooter.sh
+
+
