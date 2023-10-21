@@ -129,8 +129,7 @@ vim_pair_init () {
   ln -s ~/.vimrc-pair ./.vimrc
 }
 
-. $HOME/dotfiles/configs/tab.sh
-. $HOME/dotfiles/configs/getaroom_env.sh
+. $HOME/code/dotfiles/configs/tab.sh
 
 git_large_objects () {
   git rev-list --all --objects | \

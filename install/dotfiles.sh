@@ -48,9 +48,19 @@ ok github majutsushi/tagbar
 ok github jpalardy/vim-slime
 ok github rstacruz/sparkup
 
-# Brew deps
-brew install tmux
-brew install tig
+# development tools
+ok brew tmux
+ok brew tig
+ok brew gh
 # `https://github.com/rbenv/rbenv`, YAY no more rvm
-brew install rbenv 
-brew install jenv
+ok brew rbenv
+ok brew jenv
+# HTTP Helpers
+ok cask postman
+ok cask insomnia
+# System tools
+ok brew htop
+# Package Managers
+ok brew npm
+# Visuals
+ok brew graphviz

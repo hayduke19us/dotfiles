@@ -40,7 +40,6 @@ ZSH_THEME="af-magic"
 plugins=(git git-extras ruby web-search)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # Path, and env
 . $HOME/.env.sh
@@ -51,8 +50,31 @@ source ~/.iterm2_shell_integration.`basename $SHELL`
 # Custom Functions
 . $HOME/.functions.sh
 
+# rbenv
+eval "$(rbenv init - zsh)"
+
 # jenv for use with switching Java installs
 eval "$(jenv init -)"
 
 # for shell access
 eval "$(pyenv init -)"
+
+# gcloud
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+
+#scooter
+source $ZENDESK_CODE_DIR/scooter/scripts/shell/scooter.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Kubectl autocomplete
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# BEGIN ZDI
+export DOCKER_FOR_MAC_ENABLED=true
+source /Users/matthew.sullivan/code/zendesk/zdi/dockmaster/zdi.sh
+# END ZDI
+
+# Zendesk Kubectl
+source ~/Code/zendesk/kubectl_config/dotfiles/kubectl_stuff.bash

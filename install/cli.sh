@@ -79,3 +79,5 @@ ok brew bats-file
 
 # kubernetes
 ok brew kubernetes
+ok brew kubectl
+ok brew kubectx

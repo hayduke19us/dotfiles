@@ -3,4 +3,4 @@
 todo.txt
 done.txt
 configs/vim
-configs/env.sh
+**/*env.sh

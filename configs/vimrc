@@ -82,6 +82,7 @@ set softtabstop=2 " most of the time, we want a softtabstop of 2
 set tabstop=2     " show tabs with 2 spaces
 set shiftwidth=2  " shift by 2 spaces when using >> and <<, etc
 set expandtab     " no tabs
+set autoindent
 
 " Using autocmd for this allows it to be reset every time you open a
 " file, which keeps overrides from being persistent
@@ -116,7 +117,7 @@ endif
 
 "FILETYPE OPTIONS
 " use filetype plugins to determine indent settings
-" filetype plugin indent on
+filetype plugin indent on
 
 " ruby and yaml indentation
 augroup indent_by_type

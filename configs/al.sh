@@ -75,3 +75,10 @@ alias kube-dash="open http://localhost:8001/api/v1/namespaces/kube-system/servic
 
 alias date-all="date +%Y%m%d%H%M%S"
 alias make-changelog="touch price-sheet-story-entries-$(date-all).md"
+
+alias ports-listening="lsof -iTCP -sTCP:LISTEN -n -P"
+
+# zendesk_alias
+alias kj="kubectl --context internaltools-staging-use1"
+alias kja="kubectl --as admin --as-group jenkins-admin --as-group system:masters --context internaltools-staging-use1 -n jenkins"
+alias sj="stern --context internaltools-staging-use1"
