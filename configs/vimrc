@@ -19,9 +19,11 @@ set splitbelow            " Make new horiz splits open below current buffer
 " highlight ColorColumn ctermbg=1
 
 " solarized set up 'iterm > profile > colors > presets = solarized dark'
-syntax on " Turn on syntax highlighting
+syntax enable " Turn on syntax highlighting
 call togglebg#map("bg")
+set background=dark
 colorscheme solarized
+" let g:solarized_termcolors=256
 
 " =-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "KEY BINDINGS

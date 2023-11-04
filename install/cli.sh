@@ -29,10 +29,10 @@ ok brew httpie
 ok brew reattach-to-user-namespace
 
 # node package manager
-ok brew npm
+# ok brew npm
 
 # open database connection tool, needed for ruby-obcd
-ok brew unixodbc
+# ok brew unixodbc
 
 # redis key: value storage solution
 ok brew redis

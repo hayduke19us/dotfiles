@@ -62,5 +62,5 @@ ok github rstacruz/sparkup
 brew install tmux
 brew install tig
 # `https://github.com/rbenv/rbenv`, YAY no more rvm
-brew install rbenv 
+brew install rbenv
 brew install jenv
