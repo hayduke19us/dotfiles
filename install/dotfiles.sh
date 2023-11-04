@@ -1,17 +1,25 @@
-# Sets up dotfiles
+brew install bork
+ok brew bork
+
+# Set up dotfiles
 ok directory $HOME/code
 cd $HOME/code
 ok github hayduke19us/dotfiles
 
 cd $HOME
+
+# Prepare vim
+rm -rf .vim
+mkdir -p code/dotfiles/configs/vim/autoload
+mkdir -p code/dotfiles/configs/vim/bundle
+
+# Prepare oh-my-zsh
+rm .zshrc
+
+# Symlink config files to HOME
 for file in code/dotfiles/configs/*; do
   ok symlink ".$(basename $file)" $file
 done
-
-# Prepare vim
-mkdir -p code/dotfiles/configs/vim/autoload
-mkdir -p code/dotfiles/configs/vim/bundle
-ok symlink code/dotfiles/configs/vim .vim
 
 path=$HOME/code/dotfiles/configs/vim/autoload
 cd $path
@@ -45,7 +53,7 @@ ok github mattn/webapi-vim
 ok github chrisbra/csv.vim
 ok github Raimondi/delimitMate
 ok github majutsushi/tagbar
-ok github jpalardy/vim-slime
+ok github jpalardy/vim-slime --branch=main
 ok github rstacruz/sparkup
 
 # Brew deps
