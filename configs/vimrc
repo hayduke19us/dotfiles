@@ -12,7 +12,7 @@ set noswapfile            " Swap files annoy me.
 set textwidth=100
 set colorcolumn=+4        " Stick with short lines.
 set encoding=utf-8
-set splitright            " Make new vsplits 
+set splitright            " Make new vsplits
 set splitbelow            " Make new horiz splits open below current buffer
 
 " Column color
@@ -118,7 +118,7 @@ endif
 
 "FILETYPE OPTIONS
 " use filetype plugins to determine indent settings
-" filetype plugin indent on
+filetype plugin indent on
 
 " ruby and yaml indentation
 augroup indent_by_type
@@ -228,32 +228,18 @@ au Filetype clojure nmap <c-c><c-k> :Require<cr>
 " luochen1990/rainbow
 let g:rainbow_active = 1
 
-" Syntastic
-"let g:syntastic_mode_map = {
-" \ 'mode': 'active',
-"  \ 'passive_filetypes': ['cucumber'] }
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'ruby': ['rubocop']
+\}
 
-let g:syntastic_cursor_column = 0
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
 
-let g:syntastic_error_symbol = "☠ "
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_style_error_symbol = "☢ "
-let g:syntastic_style_warning_symbol = "⚠"
-
-" - Ruby
-let g:syntastic_ruby_checkers = ['mri']
-
-" - Cucumber
-" Syntastic uses dry run. But this doesn't require external libs. So turning off
-" for now.
-" let g:syntastic_cucumber_cucumber_args="-r features/step_definitions"
-" let g:syntastic_cucumber_cucumber_exe='bin/cucumber'
-" let g:syntastic_debug = 1
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 1
+let g:ale_fix_on_save = 1
+let g:ale_linters_explicit = 1
 
 " Bash Support
 let g:BASH_Excutable='/bin/zsh'

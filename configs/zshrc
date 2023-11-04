@@ -52,3 +52,6 @@ source $ZSH/oh-my-zsh.sh
 
 # jenv for use with switching Java installs
 eval "$(jenv init -)"
+
+# rbenv
+eval "$(rbenv init - zsh)"

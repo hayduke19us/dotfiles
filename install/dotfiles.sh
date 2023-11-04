@@ -44,6 +44,7 @@ ok github tpope/vim-fugitive
 ok github tpope/vim-surround
 ok github tpope/vim-rails
 ok github tpope/vim-bundler
+ok github vim-ruby/vim-ruby
 ok github mattn/gist-vim
 ok github kien/ctrlp.vim
 ok github scrooloose/syntastic
@@ -57,6 +58,7 @@ ok github Raimondi/delimitMate
 ok github majutsushi/tagbar
 ok github jpalardy/vim-slime --branch=main
 ok github rstacruz/sparkup
+ok github dense-analysis/ale
 
 # Brew deps
 brew install tmux
