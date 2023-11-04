@@ -1,4 +1,6 @@
 brew install bork
+ok brew git
+ok brew gh
 ok brew bork
 
 # Set up dotfiles
