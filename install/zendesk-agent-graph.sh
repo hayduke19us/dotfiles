@@ -1,11 +1,12 @@
+ok cask intellij-idea-ce
 ok brew jenv
 ok brew-tap AdoptOpenJDK/openjdk
 ok brew-tap vmware-tanzu/carvel
 ok cask adoptopenjdk11
 ok cask adoptopenjdk15
+ok cask temurin17
 ok brew openjdk
 ok brew vendi
-r
 
 ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 

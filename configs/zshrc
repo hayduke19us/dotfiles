@@ -68,10 +68,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Kubectl autocomplete
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# BEGIN ZDI
-export DOCKER_FOR_MAC_ENABLED=true
-source /Users/matthew.sullivan/code/zendesk/zdi/dockmaster/zdi.sh
-# END ZDI
 
 # Zendesk Kubectl
 source ~/Code/zendesk/kubectl_config/dotfiles/kubectl_stuff.bash
@@ -80,3 +76,7 @@ source ~/Code/zendesk/kubectl_config/dotfiles/kubectl_stuff.bash
 source $ZENDESK_CODE_DIR/scooter/scripts/shell/scooter.sh
 
 
+# BEGIN ZDI
+export DOCKER_FOR_MAC_ENABLED=true
+source /Users/matthew.sullivan/code/zendesk/zdi/dockmaster/zdi.sh
+# END ZDI

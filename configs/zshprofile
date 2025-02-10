@@ -1,0 +1,1 @@
+alias publish-local-schema="platform-data-graph-sdk local-dev --publish --name agent-graph --schema ~/code/zendesk/agent-graph/schema.graphql"

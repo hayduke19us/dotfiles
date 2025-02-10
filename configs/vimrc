@@ -9,7 +9,7 @@ set cpoptions=aABceFsWZ   " Set various compatible options
 set wildignore+=*.png,*.jpg,*.gif,*.ai,*.jpeg,*.psd,*.swp,*.jar,*.zip,*.gem,.DS_Store,log/**,tmp/**,coverage/**,rdoc/**
 set list                  " Show whitespace
 set noswapfile            " Swap files annoy me.
-set textwidth=100
+set textwidth=200
 set colorcolumn=+4        " Stick with short lines.
 set encoding=utf-8
 set splitright            " Make new vsplits 

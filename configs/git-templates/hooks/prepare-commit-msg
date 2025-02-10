@@ -8,13 +8,13 @@ SHA1=$3
 
 parse_branch_name () {
   local branch=$(git branch --show-current)
-  grep -o "\(DEV-\d*\)" <<< $branch
+  grep -o "\(SKVAD-\d*\)" <<< $branch
 }
 
 prepare_commit_msg () {
  local jira_id=$(parse_branch_name)
  local new_message="[${jira_id}]"
- if jira_id && [[ ! $(grep "\[DEV-.*\]" $COMMIT_MSG_FILE) ]]; then
+ if [[ ! -z $jira_id ]] && [[ ! $(grep "\[SKVAD-.*\]" $COMMIT_MSG_FILE) ]]; then
    sed -i.bak -e "1s/^/${new_message} /" $COMMIT_MSG_FILE
  else
    echo "\nThere is no jira id in the branch name, not adding to commit message\n"
