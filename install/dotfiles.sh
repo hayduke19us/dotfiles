@@ -1,19 +1,18 @@
 brew install bork
-ok brew git
-ok brew gh
 ok brew bork
+ok brew gh
 
 # Set up dotfiles
-ok directory $HOME/code
-cd $HOME/code
+ok directory $HOME/Code
+cd $HOME/Code
 ok github hayduke19us/dotfiles
 
 cd $HOME
 
 # Prepare vim
 rm -rf .vim
-mkdir -p code/dotfiles/configs/vim/autoload
-mkdir -p code/dotfiles/configs/vim/bundle
+mkdir -p Code/dotfiles/configs/vim/autoload
+mkdir -p Code/dotfiles/configs/vim/bundle
 
 # Prepare oh-my-zsh
 rm .zshrc
