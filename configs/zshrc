@@ -80,3 +80,5 @@ source $ZENDESK_CODE_DIR/scooter/scripts/shell/scooter.sh
 export DOCKER_FOR_MAC_ENABLED=true
 source /Users/matthew.sullivan/code/zendesk/zdi/dockmaster/zdi.sh
 # END ZDI
+# rbenv
+eval "$(rbenv init - zsh)"
